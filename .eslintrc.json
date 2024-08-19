@@ -1,0 +1,13 @@
+{
+    "parser": "@babel/eslint-parser",
+    "parserOptions": {
+        "requireConfigFile": false
+    },
+    "extends": [
+        "next",
+        "next/core-web-vitals",
+        "eslint:recommended",
+        "plugin:react-hooks/recommended",
+        "plugin:react/recommended"
+    ]
+}
