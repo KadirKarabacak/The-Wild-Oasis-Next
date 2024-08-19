@@ -1,5 +1,5 @@
 import SubmitButton from "@/app/_components/SubmitButton";
-import { updateReservation } from "@/app/_lib/actions";
+import { updateBooking } from "@/app/_lib/actions";
 import { getBooking, getCabin } from "@/app/_lib/data-service";
 // import { useFormStatus } from "react-dom";
 
@@ -15,7 +15,8 @@ export default async function Page({ params }) {
             </h2>
 
             <form
-                action={updateReservation}
+                method="POST"
+                action={updateBooking}
                 className="bg-primary-900 py-8 px-12 text-lg flex gap-6 flex-col"
             >
                 {/* A trick to send bookingId into the server action formData */}
@@ -57,8 +58,6 @@ export default async function Page({ params }) {
                 <div className="flex justify-end items-center gap-6">
                     <SubmitButton>Update Reservation</SubmitButton>
                 </div>
-
-                {/* <HiddenInput /> */}
             </form>
         </div>
     );
