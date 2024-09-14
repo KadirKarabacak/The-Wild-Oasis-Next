@@ -13,7 +13,7 @@ async function Reservation({ cabin }) {
 
     const session = await auth();
     return (
-        <div className="grid grid-cols-2 border border-primary-800 min-h-[400px]">
+        <div className="grid grid-cols-2 max1000:grid-cols-1 border border-primary-800">
             {/* As a convention client components must be take less data, not like whole object. */}
             <DateSelector
                 settings={settings}
