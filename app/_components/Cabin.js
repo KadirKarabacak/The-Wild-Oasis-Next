@@ -2,25 +2,25 @@ import Image from "next/image";
 import React from "react";
 import TextExpander from "./TextExpander";
 import { EyeSlashIcon, MapPinIcon, UsersIcon } from "@heroicons/react/24/solid";
+import CancelButton from "./CancelButton";
 
 function Cabin({ cabin }) {
     const { image, name, description, maxCapacity } = cabin;
 
     return (
-        <div className="grid grid-cols-[3fr_4fr] gap-20 border border-primary-800 py-3 px-10 mb-24">
-            <div className="relative scale-[1.15] -translate-x-3">
+        <div className="grid grid-cols-[3fr_4fr] max850:block max850:grid-cols-1 gap-20 border border-primary-800 py-3 px-10 mb-24 max950:mb-10 max950:px-0 max950:py-0 max950:gap-8 max600:gap-2">
+            <div className="relative">
                 <Image
                     src={image}
                     alt={`Cabin ${name}`}
                     fill
-                    className="object-cover"
+                    className="object-cover max850:!relative max450:!h-80"
                     quality={100}
-                    // sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
             </div>
 
-            <div>
-                <h3 className="text-accent-100 font-black text-7xl mb-5 translate-x-[-254px] bg-primary-950 p-6 pb-1 w-[150%]">
+            <div className="max850:px-8">
+                <h3 className="text-accent-100 max600:text-4xl font-black text-7xl mb-5 bg-primary-950 p-6 pb-1 max600:pl-0 ">
                     Cabin {name}
                 </h3>
 
@@ -51,6 +51,12 @@ function Cabin({ cabin }) {
                             guaranteed
                         </span>
                     </li>
+                    <CancelButton
+                        pathName="/cabins"
+                        buttonStyles="min600:self-start min600:px-16 min600:py-5"
+                    >
+                        Back to Cabins
+                    </CancelButton>
                 </ul>
             </div>
         </div>
