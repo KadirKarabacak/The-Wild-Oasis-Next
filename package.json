@@ -13,11 +13,13 @@
         "@heroicons/react": "^2.1.4",
         "@supabase/supabase-js": "^2.43.5",
         "date-fns": "^3.6.0",
+        "hamburger-react": "^2.5.1",
         "next": "14.2.3",
         "next-auth": "^5.0.0-beta.19",
         "react": "^18",
         "react-day-picker": "^8.10.1",
-        "react-dom": "^18"
+        "react-dom": "^18",
+        "react-modern-drawer": "^1.4.0"
     },
     "devDependencies": {
         "@babel/core": "^7.24.6",
