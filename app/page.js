@@ -15,13 +15,13 @@ export default function Page() {
                 alt="Mountains and forests with two cabins"
             />
 
-            <div className="relative z-10 text-center">
-                <h1 className="text-8xl text-primary-50 mb-10 tracking-tight font-normal">
+            <div className="relative z-8 text-center">
+                <h1 className="text-8xl text-primary-50 mb-10 tracking-tight font-normal max600:text-5xl">
                     Welcome to paradise.
                 </h1>
                 <Link
                     href="/cabins"
-                    className="bg-accent-500 px-8 py-6 rounded-sm text-primary-800 text-lg font-semibold hover:bg-accent-600 transition-all"
+                    className="bg-accent-500 max650:px-4 max650:py-3 max650:text-sm px-8 py-6 rounded-sm text-primary-800 text-lg font-semibold hover:bg-accent-600 transition-all"
                 >
                     Explore luxury cabins
                 </Link>
