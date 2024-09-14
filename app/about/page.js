@@ -12,16 +12,14 @@ export const revalidate = 3600; // Seconds
 
 export default async function Page() {
     const cabins = await getCabins();
-
     return (
-        <div className="grid grid-cols-5 gap-x-24 gap-y-32 text-lg items-center">
-            <div className="col-span-3">
-                <h1 className="text-4xl mb-10 text-accent-400 font-medium">
+        <div className="grid max400:flex max400:flex-col max400:gap-y-6 grid-cols-5 gap-x-24 gap-y-32 max1100:gap-y-12 max1100:gap-x-12 text-lg items-center">
+            <div className="col-span-3 max600:col-span-5 max800:col-span-5">
+                <h1 className="text-4xl max600:text-2xl mb-10 text-accent-400 font-medium max400:text-center">
                     Welcome to The Wild Oasis
                 </h1>
-
-                <div className="space-y-8">
-                    <p>
+                <div className="space-y-8 max400:flex max400:justify-center max400:flex-col max400:items-center">
+                    <p className="max400:text-sm max400:max-w-[90%]">
                         Where nature's beauty and comfortable living blend
                         seamlessly. Hidden away in the heart of the Italian
                         Dolomites, this is your paradise away from home. But
@@ -29,14 +27,14 @@ export default async function Page() {
                         experience of reconnecting with nature and enjoying
                         simple pleasures with family.
                     </p>
-                    <p>
+                    <p className="max400:text-sm max400:max-w-[90%]">
                         Our {cabins.length} luxury cabins provide a cozy base,
                         but the real freedom and peace you'll find in the
                         surrounding mountains. Wander through lush forests,
                         breathe in the fresh air, and watch the stars twinkle
                         above from the warmth of a campfire or your hot tub.
                     </p>
-                    <p>
+                    <p className="max400:text-sm max400:max-w-[90%]">
                         This is where memorable moments are made, surrounded by
                         nature's splendor. It's a place to slow down, relax, and
                         feel the joy of being together in a beautiful setting.
@@ -44,43 +42,44 @@ export default async function Page() {
                 </div>
             </div>
 
-            <div className="col-span-2">
+            <div className="col-span-2 max800:col-span-5 max400:flex max400:justify-center">
                 <Image
                     src={image1}
                     alt="Family sitting around a fire pit in front of cabin"
                     placeholder="blur"
                     quality={80}
+                    className="rounded-md max400:max-w-[90%]"
                 />
             </div>
 
             {/*  What happens if we can't import images staticly and we don't want to spesify width - height? */}
             {/* 1: Image needs a container which has css properties position: relative; & aspect-ratio: 1/1; */}
             {/* 2: Image needs fill prop & object-fit: cover; */}
-            <div className="col-span-2 relative aspect-square">
+            <div className="col-span-2 max800:col-span-5  relative aspect-square max400:aspect-auto max400:flex max400:justify-center">
                 <Image
                     src="/about-2.jpg"
                     alt="Family that manages The Wild Oasis"
                     fill
                     //! Placeholder also works only with static imports
                     // placeholder="blur"
-                    className="object-cover"
+                    className="object-cover rounded-md max400:!w-[90%] max400:!h-3/4 max400:!relative"
                 />
             </div>
 
-            <div className="col-span-3">
-                <h1 className="text-4xl mb-10 text-accent-400 font-medium">
+            <div className="col-span-3 max800:col-span-5 ">
+                <h1 className="text-4xl mb-10 max600:text-2xl text-accent-400 font-medium max400:text-center max400:text-xl">
                     Managed by our family since 1962
                 </h1>
 
-                <div className="space-y-8">
-                    <p>
+                <div className="space-y-8 max400:flex max400:justify-center max400:flex-col max400:items-center">
+                    <p className="max400:text-sm max400:max-w-[90%]">
                         Since 1962, The Wild Oasis has been a cherished
                         family-run retreat. Started by our grandparents, this
                         haven has been nurtured with love and care, passing down
                         through our family as a testament to our dedication to
                         creating a warm, welcoming environment.
                     </p>
-                    <p>
+                    <p className="max400:text-sm max400:max-w-[90%]">
                         Over the years, we've maintained the essence of The Wild
                         Oasis, blending the timeless beauty of the mountains
                         with the personal touch only a family business can
@@ -93,7 +92,7 @@ export default async function Page() {
                     <div>
                         <a
                             href="/cabins"
-                            className="inline-block mt-4 bg-accent-500 px-8 py-5 text-primary-800 text-lg font-semibold hover:bg-accent-600 transition-all"
+                            className="inline-block mt-4 bg-accent-500 px-8 py-5 text-primary-800 text-lg max400:px-4 max400:py-3 max400:text-sm font-semibold hover:bg-accent-600 transition-all rounded-md"
                         >
                             Explore our luxury cabins
                         </a>
