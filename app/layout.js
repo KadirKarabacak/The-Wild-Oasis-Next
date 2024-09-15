@@ -4,7 +4,7 @@ import { Josefin_Sans } from "next/font/google";
 const josefin = Josefin_Sans({
     subsets: ["latin"],
     display: "swap", // At the beginning display default, then display Josefin when downloaded
-    fallback: ["Segoe UI", "Roboto", "Helvetica Neue", "Arial", "sans - serif"],
+    fallback: ["Segoe UI", "Roboto", "Helvetica Neue", "Arial", "sans-serif"],
 });
 
 import "@/app/_styles/globals.css";
