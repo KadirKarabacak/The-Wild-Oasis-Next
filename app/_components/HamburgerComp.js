@@ -73,7 +73,7 @@ export default function HamburgerComp({ session }) {
                                     // This prop is necessary to import images from google
                                     referrerPolicy="no-referrer"
                                 />
-                                <span>Guest area</span>
+                                <span>Guest Area</span>
                             </Link>
                         ) : (
                             <Link
@@ -81,7 +81,7 @@ export default function HamburgerComp({ session }) {
                                 className="hover:text-accent-400 flex items-center gap-4 transition-colors"
                             >
                                 <UserCircleIcon className="w-8 h-8 text-primary-300" />
-                                <span>Guest area</span>
+                                <span>Guest Area</span>
                             </Link>
                         )}
                     </li>
