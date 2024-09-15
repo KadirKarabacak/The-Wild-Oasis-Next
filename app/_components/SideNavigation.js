@@ -92,6 +92,7 @@ function SideNavigation({ session }) {
                     lockBackgroundScroll
                     open={isOpenDrawer}
                     onClose={toggleDrawer}
+                    customIdSuffix="121212151548"
                     direction="right"
                     className="bottom-0 !bg-primary-800 !z-[99999]"
                 >
