@@ -57,14 +57,14 @@ export default async function Navigation() {
                                     // This prop is necessary to import images from google
                                     referrerPolicy="no-referrer"
                                 />
-                                <span>Guest area</span>
+                                <span>Guest Area</span>
                             </Link>
                         ) : (
                             <Link
                                 href="/account"
                                 className="hover:text-accent-400 transition-colors"
                             >
-                                Guest area
+                                Guest Area
                             </Link>
                         )}
                     </li>
