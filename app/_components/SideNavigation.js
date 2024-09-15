@@ -25,7 +25,7 @@ const navLinks = [
         icon: <CalendarDaysIcon className="w-8 h-8 text-primary-300" />,
     },
     {
-        name: "Guest profile",
+        name: "Guest Profile",
         href: "/account/profile",
         icon: <UserIcon className="w-8 h-8 text-primary-300" />,
     },
@@ -78,10 +78,10 @@ function SideNavigation({ session }) {
                         toggle={setIsOpenDrawer}
                     />
                     <label className="text-xl max600:mr-2">
-                        Navigate in profile
+                        Navigate in Guest Area
                     </label>
                     <img
-                        className="object-cover h-8 rounded-full"
+                        className="object-cover h-8 rounded-md max400:hidden"
                         alt={session?.user?.name}
                         src={session?.user?.image}
                         // This prop is necessary to import images from google
