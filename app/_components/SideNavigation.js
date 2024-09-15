@@ -96,6 +96,16 @@ function SideNavigation({ session }) {
                     direction="right"
                     className="bottom-0 !bg-primary-800 !z-[99999]"
                 >
+                    <span className="absolute right-0 top-0">
+                        <Hamburger
+                            label="Sidebar Drawer Controller"
+                            rounded
+                            size={20}
+                            toggled={isOpenDrawer}
+                            toggle={setIsOpenDrawer}
+                            color="white"
+                        />
+                    </span>
                     <Logo
                         containerStyles="mt-4 justify-center flex-col pb-6 border-b border-primary-500"
                         height="120"
