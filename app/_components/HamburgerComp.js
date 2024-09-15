@@ -32,6 +32,7 @@ export default function HamburgerComp({ session }) {
                 open={isOpenDrawer}
                 onClose={toggleDrawer}
                 direction="left"
+                customIdSuffix="78795464684"
                 className="bottom-0 !bg-primary-800 !z-[99999]"
             >
                 <Logo
