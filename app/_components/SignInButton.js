@@ -14,7 +14,7 @@ function SignInButton() {
                     height="24"
                     width="24"
                 />
-                <span className="self-center pt-1 max400:text-sm">
+                <span className="self-center pt-1 max400:text-[1rem]">
                     Continue with Google
                 </span>
             </button>
