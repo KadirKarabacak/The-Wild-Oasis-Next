@@ -10,6 +10,7 @@ const josefin = Josefin_Sans({
 import "@/app/_styles/globals.css";
 import Header from "./_components/Header";
 import { ReservationProvider } from "./_components/ReservationContext";
+import { Toaster } from "react-hot-toast";
 
 // Page title witch shown on new browser tab
 export const metadata = {
@@ -28,6 +29,21 @@ export default function RootLayout({ children }) {
             <body
                 className={`${josefin.className} bg-primary-950 antialiased relative text-primary-100 min-h-screen flex flex-col`}
             >
+                <Toaster
+                    position="bottom-left"
+                    reverseOrder={false}
+                    gutter={8}
+                    containerClassName=""
+                    containerStyle={{}}
+                    toastOptions={{
+                        duration: 8000,
+                        style: {
+                            background: "#3C546C",
+                            color: "#fff",
+                            padding: "1rem 2rem",
+                        },
+                    }}
+                />
                 <Header />
                 <div className="flex-1 max600:px-4 max800:py-6 px-8 py-12 grid:justify-center max450:px-2">
                     <main className="max-w-7xl mx-auto w-full">
