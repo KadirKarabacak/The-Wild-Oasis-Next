@@ -1,11 +1,13 @@
 "use server";
 
+import toast from "react-hot-toast";
 import { auth, signIn, signOut } from "./auth";
 import { getBookings } from "./data-service";
 import { supabase } from "./supabase";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
+//! Server Action Without Toasts
 export async function updateGuest(formData) {
     const session = await auth();
     if (!session) throw new Error("You must be logged in");
@@ -14,6 +16,7 @@ export async function updateGuest(formData) {
     const [nationality, countryFlag] = formData.get("nationality").split("%");
 
     if (!/^[a-zA-Z0-9]{6,12}$/.test(nationalID))
+        // return toast.error("Please provide a valid national ID");
         throw new Error("Please provide a valid national ID");
 
     const updateData = { nationality, countryFlag, nationalID };
@@ -27,6 +30,42 @@ export async function updateGuest(formData) {
 
     revalidatePath("/account/profile");
 }
+
+//! Onsubmit with Toasts
+// export async function updateGuest(formData) {
+//     const session = await auth();
+//     if (!session) throw new Error("You must be logged in");
+
+//     try {
+//         const nationalID = formData.get("nationalID");
+//         const [nationality, countryFlag] = formData
+//             .get("nationality")
+//             .split("%");
+
+//         if (!/^[a-zA-Z0-9]{6,12}$/.test(nationalID)) {
+//             throw new Error("Please provide a valid national ID");
+//         }
+
+//         const updateData = { nationality, countryFlag, nationalID };
+
+//         const { data, error } = await supabase
+//             .from("guests")
+//             .update(updateData)
+//             .eq("id", session.user.guestId);
+
+//         if (error) {
+//             throw new Error("Guest could not be updated");
+//         }
+
+//         revalidatePath("/account/profile");
+
+//         // Başarılı işlemi göstermek için toast kullanabilirsiniz.
+//         return { success: true };
+//     } catch (error) {
+//         // Hata durumunda mesajı döndürebilirsiniz.
+//         return { success: false, message: error.message };
+//     }
+// }
 
 export async function createBooking(bookingData, formData) {
     const session = await auth();
