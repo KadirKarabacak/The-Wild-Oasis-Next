@@ -1,16 +1,34 @@
 "use client";
 // This one is a client component trying to import a server component [ SelectCountry ]. Trying this makes us problems
-import React, { useState } from "react";
+import toast from "react-hot-toast";
 import { updateGuest } from "../_lib/actions";
 import SubmitButton from "./SubmitButton";
+import { useState } from "react";
 
 //! Importing a server component inside client component causing the problem
 // import SelectCountry from "./SelectCountry";
 
 function UpdateProfileForm({ children, guest }) {
-    const [count, setCount] = useState();
-
+    const [isLoading, setIsLoading] = useState(false);
     const { fullName, email, nationality, nationalID, countryFlag } = guest;
+
+    //! Works with Toasts on Success & Error
+    // const handleSubmit = async e => {
+    //     e.preventDefault();
+    //     const formData = new FormData(e.target);
+
+    //     // Sunucu aksiyonunu çağır
+    //     setIsLoading(true);
+    //     const result = await updateGuest(formData);
+    //     setIsLoading(false);
+
+    //     // Hatalıysa toast ile bildirim göster
+    //     if (!result.success) {
+    //         toast.error(result.message);
+    //     } else {
+    //         toast.success("Profile updated successfully!");
+    //     }
+    // };
 
     return (
         <form
@@ -58,7 +76,9 @@ function UpdateProfileForm({ children, guest }) {
             </div>
 
             <div className="flex justify-end items-center gap-6">
-                <SubmitButton>Update Profile</SubmitButton>
+                <SubmitButton isLoading={isLoading}>
+                    Update Profile
+                </SubmitButton>
             </div>
         </form>
     );
